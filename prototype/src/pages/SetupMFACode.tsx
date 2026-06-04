@@ -14,7 +14,7 @@ export function SetupMFACode() {
   const location = useLocation()
   const { config, adminOpen, setAdminOpen } = useAdmin()
   const [code, setCode] = useState('')
-  const [resent, setResent] = useState(false)
+
 
   const maskedContact = (location.state as { maskedContact?: string })?.maskedContact ?? '********94'
 
@@ -24,10 +24,7 @@ export function SetupMFACode() {
     { label: 'Set up multi-factor authentication', status: 'active' as const },
   ]
 
-  const handleResend = () => {
-    setResent(true)
-    setTimeout(() => setResent(false), 3000)
-  }
+  const handleResend = () => {}
 
   const handleContinue = () => {
     navigate('/success')

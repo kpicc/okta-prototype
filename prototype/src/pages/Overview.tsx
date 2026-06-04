@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const tabs = ['Overview', 'Addons & passes', 'Usage details', 'Plan & device', 'My profile']
 
-function DataUsageCard({ title, subtitle, used, total, pct }: { title: string; subtitle: string; used: string; total: string; pct: number }) {
+function DataUsageCard({ used, total, pct }: { used: string; total: string; pct: number }) {
   return (
     <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.08)', padding: '28px 32px', display: 'flex', alignItems: 'center', gap: '40px' }}>
       <div style={{ flex: 1 }}>
@@ -118,14 +118,14 @@ export function Overview() {
         <div>
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#111827', margin: '0 0 6px' }}>Freedom Data</h2>
           <p style={{ fontSize: '14px', color: '#6b7280', margin: '0 0 16px' }}>Optional copy dolor sit amet, consectetur adipiscing elit.</p>
-          <DataUsageCard title="Freedom Data" subtitle="" used="5.6GB" total="25GB" pct={22} />
+          <DataUsageCard used="5.6GB" total="25GB" pct={22} />
         </div>
 
         {/* Nationwide Data */}
         <div>
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#111827', margin: '0 0 6px' }}>Nationwide Data</h2>
           <p style={{ fontSize: '14px', color: '#6b7280', margin: '0 0 16px' }}>Optional copy dolor sit amet, consectetur adipiscing elit.</p>
-          <DataUsageCard title="Nationwide Data" subtitle="" used="1.6GB" total="25GB" pct={6} />
+          <DataUsageCard used="1.6GB" total="25GB" pct={6} />
         </div>
 
       </div>
