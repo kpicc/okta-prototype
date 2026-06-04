@@ -13,7 +13,8 @@ export function SignInPassword() {
   const location = useLocation()
   const { config, adminOpen, setAdminOpen } = useAdmin()
   const c = config.signInPassword
-  const email = (location.state as { email?: string })?.email ?? ''
+  const routeEmail = (location.state as { email?: string })?.email ?? ''
+  const [email, setEmail] = useState(routeEmail)
   const [password, setPassword] = useState('')
   const [passwordError, setPasswordError] = useState('')
 
@@ -57,8 +58,8 @@ export function SignInPassword() {
                 label="Email"
                 type="email"
                 value={email}
-                onChange={() => {}}
-                disabled
+                onChange={routeEmail ? () => {} : setEmail}
+                disabled={!!routeEmail}
               />
               <InputField
                 label="Password"
@@ -67,7 +68,7 @@ export function SignInPassword() {
                 onChange={(val) => { setPassword(val); setPasswordError('') }}
                 error={passwordError}
               />
-              {c.showForgotPassword && <div><TextLink showChevron color="blue">{c.forgotPasswordText}</TextLink></div>}
+              {c.showForgotPassword && <div><TextLink showChevron color="blue" onClick={() => navigate('/forgot-password')}>{c.forgotPasswordText}</TextLink></div>}
             </div>
 
             <Button onClick={handleContinue} fullWidth>{c.buttonText}</Button>
