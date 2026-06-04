@@ -7,7 +7,7 @@ const FIELD_TYPES: FieldType[] = ['text', 'email', 'password', 'tel', 'dropdown'
 
 function uid() { return Math.random().toString(36).slice(2) }
 
-const SECTIONS = ['Alert Banner', 'Sign-In Form', 'Footer', 'Error Alert', 'Form Fields', 'Carousel Slides', 'Create Account', 'Verify Email', 'Link Services', 'Setup MFA', 'Success']
+const SECTIONS = ['Alert Banner', 'Sign-In Form', 'Footer', 'Error Alert', 'Form Fields', 'Carousel Slides', 'Create Account', 'Verify Email', 'Link Services', 'Setup MFA', 'Success', 'Sign-In Password', 'Account Verification', 'Sign-In Code']
 const SECTION_ICONS: Record<string, string> = {
   'Alert Banner': '🔔',
   'Sign-In Form': '📝',
@@ -20,6 +20,9 @@ const SECTION_ICONS: Record<string, string> = {
   'Link Services': '🔗',
   'Setup MFA': '🔐',
   'Success': '✅',
+  'Sign-In Password': '🔑',
+  'Account Verification': '📱',
+  'Sign-In Code': '🔢',
 }
 
 export function AdminPanel() {
@@ -30,6 +33,7 @@ export function AdminPanel() {
     'Error Alert': false, 'Form Fields': false, 'Carousel Slides': false,
     'Create Account': false, 'Verify Email': false, 'Link Services': false,
     'Setup MFA': false, 'Success': false,
+    'Sign-In Password': false, 'Account Verification': false, 'Sign-In Code': false,
   })
 
   function toggleSection(title: string) {
@@ -226,6 +230,72 @@ export function AdminPanel() {
                   ))}
                   <AddBtn onClick={() => update({ setupMFA: { ...config.setupMFA, methods: [...config.setupMFA.methods, { value: uid(), label: 'New option', contactValue: '' }] } })} label="Add Method" />
                 </>}
+
+                {title === 'Sign-In Password' && <>
+                  <PRow label="Heading"><PInput value={config.signInPassword.heading} onChange={v => update({ signInPassword: { ...config.signInPassword, heading: v } })} /></PRow>
+                  <PRow label="Subtitle"><PTextarea value={config.signInPassword.subtitle} onChange={v => update({ signInPassword: { ...config.signInPassword, subtitle: v } })} /></PRow>
+                  <PRow label="Button Text"><PInput value={config.signInPassword.buttonText} onChange={v => update({ signInPassword: { ...config.signInPassword, buttonText: v } })} /></PRow>
+                  <PRow label="Show Forgot Password">
+                    <Toggle checked={config.signInPassword.showForgotPassword} onChange={v => update({ signInPassword: { ...config.signInPassword, showForgotPassword: v } })} />
+                  </PRow>
+                  {config.signInPassword.showForgotPassword && <PRow label="Forgot Password Text"><PInput value={config.signInPassword.forgotPasswordText} onChange={v => update({ signInPassword: { ...config.signInPassword, forgotPasswordText: v } })} /></PRow>}
+                  <PRow label="Show Need Help">
+                    <Toggle checked={config.signInPassword.showNeedHelp} onChange={v => update({ signInPassword: { ...config.signInPassword, showNeedHelp: v } })} />
+                  </PRow>
+                  {config.signInPassword.showNeedHelp && <PRow label="Need Help Text"><PInput value={config.signInPassword.needHelpText} onChange={v => update({ signInPassword: { ...config.signInPassword, needHelpText: v } })} /></PRow>}
+                  <PRow label="Show New to Freedom">
+                    <Toggle checked={config.signInPassword.showNewToFreedom} onChange={v => update({ signInPassword: { ...config.signInPassword, showNewToFreedom: v } })} />
+                  </PRow>
+                  {config.signInPassword.showNewToFreedom && <PRow label="New to Freedom Text"><PInput value={config.signInPassword.newToFreedomText} onChange={v => update({ signInPassword: { ...config.signInPassword, newToFreedomText: v } })} /></PRow>}
+                </>
+                }
+
+                {title === 'Account Verification' && <>
+                  <PRow label="Heading"><PInput value={config.accountVerification.heading} onChange={v => update({ accountVerification: { ...config.accountVerification, heading: v } })} /></PRow>
+                  <PRow label="Subtitle"><PTextarea value={config.accountVerification.subtitle} onChange={v => update({ accountVerification: { ...config.accountVerification, subtitle: v } })} /></PRow>
+                  <PRow label="Button Text"><PInput value={config.accountVerification.buttonText} onChange={v => update({ accountVerification: { ...config.accountVerification, buttonText: v } })} /></PRow>
+                  <PRow label="Show Phone Option">
+                    <Toggle checked={config.accountVerification.showPhone} onChange={v => update({ accountVerification: { ...config.accountVerification, showPhone: v } })} />
+                  </PRow>
+                  {config.accountVerification.showPhone && <>
+                    <PRow label="Phone Label"><PInput value={config.accountVerification.phoneLabel} onChange={v => update({ accountVerification: { ...config.accountVerification, phoneLabel: v } })} /></PRow>
+                    <PRow label="Phone Masked Value"><PInput value={config.accountVerification.phoneMasked} onChange={v => update({ accountVerification: { ...config.accountVerification, phoneMasked: v } })} /></PRow>
+                  </>}
+                  <PRow label="Show Email Option">
+                    <Toggle checked={config.accountVerification.showEmail} onChange={v => update({ accountVerification: { ...config.accountVerification, showEmail: v } })} />
+                  </PRow>
+                  {config.accountVerification.showEmail && <>
+                    <PRow label="Email Label"><PInput value={config.accountVerification.emailLabel} onChange={v => update({ accountVerification: { ...config.accountVerification, emailLabel: v } })} /></PRow>
+                    <PRow label="Email Masked Value"><PInput value={config.accountVerification.emailMasked} onChange={v => update({ accountVerification: { ...config.accountVerification, emailMasked: v } })} /></PRow>
+                  </>}
+                  <PRow label="Show Need Help">
+                    <Toggle checked={config.accountVerification.showNeedHelp} onChange={v => update({ accountVerification: { ...config.accountVerification, showNeedHelp: v } })} />
+                  </PRow>
+                  {config.accountVerification.showNeedHelp && <PRow label="Need Help Text"><PInput value={config.accountVerification.needHelpText} onChange={v => update({ accountVerification: { ...config.accountVerification, needHelpText: v } })} /></PRow>}
+                  <PRow label="Show New to Freedom">
+                    <Toggle checked={config.accountVerification.showNewToFreedom} onChange={v => update({ accountVerification: { ...config.accountVerification, showNewToFreedom: v } })} />
+                  </PRow>
+                  {config.accountVerification.showNewToFreedom && <PRow label="New to Freedom Text"><PInput value={config.accountVerification.newToFreedomText} onChange={v => update({ accountVerification: { ...config.accountVerification, newToFreedomText: v } })} /></PRow>}
+                </>
+                }
+
+                {title === 'Sign-In Code' && <>
+                  <PRow label="Heading"><PInput value={config.signInCode.heading} onChange={v => update({ signInCode: { ...config.signInCode, heading: v } })} /></PRow>
+                  <PRow label="Subtitle"><PInput value={config.signInCode.subtitle} onChange={v => update({ signInCode: { ...config.signInCode, subtitle: v } })} /></PRow>
+                  <PRow label="Input Label"><PInput value={config.signInCode.inputLabel} onChange={v => update({ signInCode: { ...config.signInCode, inputLabel: v } })} /></PRow>
+                  <PRow label="Resend Text"><PInput value={config.signInCode.resendText} onChange={v => update({ signInCode: { ...config.signInCode, resendText: v } })} /></PRow>
+                  <PRow label="Resend Link Text"><PInput value={config.signInCode.resendLinkText} onChange={v => update({ signInCode: { ...config.signInCode, resendLinkText: v } })} /></PRow>
+                  <PRow label="Button Text"><PInput value={config.signInCode.buttonText} onChange={v => update({ signInCode: { ...config.signInCode, buttonText: v } })} /></PRow>
+                  <PRow label="Show Need Help">
+                    <Toggle checked={config.signInCode.showNeedHelp} onChange={v => update({ signInCode: { ...config.signInCode, showNeedHelp: v } })} />
+                  </PRow>
+                  {config.signInCode.showNeedHelp && <PRow label="Need Help Text"><PInput value={config.signInCode.needHelpText} onChange={v => update({ signInCode: { ...config.signInCode, needHelpText: v } })} /></PRow>}
+                  <PRow label="Show New to Freedom">
+                    <Toggle checked={config.signInCode.showNewToFreedom} onChange={v => update({ signInCode: { ...config.signInCode, showNewToFreedom: v } })} />
+                  </PRow>
+                  {config.signInCode.showNewToFreedom && <PRow label="New to Freedom Text"><PInput value={config.signInCode.newToFreedomText} onChange={v => update({ signInCode: { ...config.signInCode, newToFreedomText: v } })} /></PRow>}
+                </>
+                }
 
                 {title === 'Success' && <>
                   <PRow label="Heading"><PInput value={config.success.heading} onChange={v => update({ success: { ...config.success, heading: v } })} /></PRow>

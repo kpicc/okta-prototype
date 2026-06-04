@@ -41,6 +41,9 @@ export interface AdminConfig {
   linkServices: { heading: string; subtitle: string; buttonText: string; currentCustomerTitle: string; currentCustomerSubtitle: string; currentCustomerButton: string; newCustomerTitle: string; newCustomerSubtitle: string; newCustomerButton: string }
   setupMFA: { heading: string; subtitle: string; buttonText: string; skipText: string; methods: { value: string; label: string; contactValue: string }[] }
   success: { heading: string; subtitle: string; buttonText: string }
+  signInPassword: { heading: string; subtitle: string; showForgotPassword: boolean; forgotPasswordText: string; buttonText: string; showNeedHelp: boolean; needHelpText: string; showNewToFreedom: boolean; newToFreedomText: string }
+  accountVerification: { heading: string; subtitle: string; showPhone: boolean; phoneLabel: string; phoneMasked: string; showEmail: boolean; emailLabel: string; emailMasked: string; buttonText: string; showNeedHelp: boolean; needHelpText: string; showNewToFreedom: boolean; newToFreedomText: string }
+  signInCode: { heading: string; subtitle: string; inputLabel: string; resendText: string; resendLinkText: string; buttonText: string; showNeedHelp: boolean; needHelpText: string; showNewToFreedom: boolean; newToFreedomText: string }
 }
 
 const defaultConfig: AdminConfig = {
@@ -98,6 +101,44 @@ const defaultConfig: AdminConfig = {
     heading: "You're all set!",
     subtitle: 'Your account has been created successfully. You can now sign in with your new email and password.',
     buttonText: 'Go to my account',
+  },
+  signInPassword: {
+    heading: 'Sign in',
+    subtitle: 'Please enter your email and password.',
+    showForgotPassword: true,
+    forgotPasswordText: 'Forgot password?',
+    buttonText: 'Continue',
+    showNeedHelp: true,
+    needHelpText: 'Need help? Message an agent',
+    showNewToFreedom: true,
+    newToFreedomText: 'New to Freedom? Create an account',
+  },
+  accountVerification: {
+    heading: 'Account verification',
+    subtitle: 'How do you want to receive your security code?',
+    showPhone: true,
+    phoneLabel: 'Phone number',
+    phoneMasked: '••••••••94',
+    showEmail: true,
+    emailLabel: 'Email',
+    emailMasked: 'e***l@address.com',
+    buttonText: 'Continue',
+    showNeedHelp: true,
+    needHelpText: 'Need help? Message an agent',
+    showNewToFreedom: true,
+    newToFreedomText: 'New to Freedom? Create an account',
+  },
+  signInCode: {
+    heading: 'Account verification.',
+    subtitle: 'We sent a code to',
+    inputLabel: 'Enter code',
+    resendText: "Didn't get a code?",
+    resendLinkText: 'Resend',
+    buttonText: 'Continue',
+    showNeedHelp: true,
+    needHelpText: 'Need help? Message an agent',
+    showNewToFreedom: true,
+    newToFreedomText: 'New to Freedom? Create an account',
   },
   slides: [
     {

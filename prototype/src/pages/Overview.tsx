@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AdminPanel } from '../components/AdminPanel'
+import { useAdmin } from '../context/AdminContext'
 
 const tabs = ['Overview', 'Addons & passes', 'Usage details', 'Plan & device', 'My profile']
 
@@ -29,6 +31,7 @@ function DataUsageCard({ used, total, pct }: { used: string; total: string; pct:
 
 export function Overview() {
   const navigate = useNavigate()
+  const { adminOpen } = useAdmin()
   const [activeTab, setActiveTab] = useState('Overview')
 
   return (
@@ -129,6 +132,7 @@ export function Overview() {
         </div>
 
       </div>
+      {adminOpen && <AdminPanel />}
     </div>
   )
 }

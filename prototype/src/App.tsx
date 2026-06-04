@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SignIn } from './pages/SignIn'
+import { SignInPassword } from './pages/SignInPassword'
+import { AccountVerification } from './pages/AccountVerification'
+import { SignInCode } from './pages/SignInCode'
 import { CreateAccount } from './pages/CreateAccount'
 import { VerifyEmail } from './pages/VerifyEmail'
 import { LinkServices } from './pages/LinkServices'
@@ -16,6 +19,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
+        <Route path="/sign-in-password" element={<SignInPassword />} />
+        <Route path="/account-verification" element={<AccountVerification />} />
+        <Route path="/sign-in-code" element={<SignInCode />} />
         <Route path="/create-account" element={<CreateAccount />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/link-services" element={<LinkServices />} />

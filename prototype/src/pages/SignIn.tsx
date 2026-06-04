@@ -69,7 +69,7 @@ export function SignIn() {
     }
     setError('')
     setShowAlert(false)
-    navigate('/create-account')
+    navigate('/sign-in-password', { state: { email } })
   }
 
   return (
@@ -231,10 +231,7 @@ export function SignIn() {
                 {/* Subtitle */}
                 <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                   <div style={{ width: '3px', flexShrink: 0, borderRadius: '2px', alignSelf: 'stretch', backgroundColor: '#E87722' }} />
-                  <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.5 }}>
-                    {config.subtitleText}{' '}
-                    <TextLink onClick={() => navigate('/create-account')} showChevron color="blue">{config.subtitleLinkText}</TextLink>
-                  </p>
+                  <p style={{ fontSize: '14px', color: '#555', lineHeight: 1.5 }}>{config.subtitleText}{' '}<TextLink onClick={() => navigate('/create-account')} showChevron color="blue">{config.subtitleLinkText}</TextLink></p>
                 </div>
                 {/* Fields */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -290,7 +287,6 @@ export function SignIn() {
             <div className="flex-1 flex flex-col justify-center" style={{ paddingLeft: 'clamp(24px, 8vw, 100px)', paddingRight: 'clamp(24px, 8vw, 100px)', paddingTop: '32px', paddingBottom: '32px' }}>
               <h1 className="text-[32px] text-gray-900 mb-4" style={{ fontWeight: 500, marginBottom: '16px' }}>{config.heading}</h1>
 
-              {/* Subtitle with inline orange link — no left border bar */}
               <div className="flex gap-2" style={{ marginBottom: '16px' }}>
                 <div className="w-[3px] shrink-0 bg-[#E87722] self-stretch rounded-full" />
                 <p className="text-base text-gray-600 leading-relaxed">
