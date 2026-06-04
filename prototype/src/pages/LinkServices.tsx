@@ -83,10 +83,10 @@ export function LinkServices() {
               {/* Current Customer */}
               <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: '40px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ flex: 1 }}>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: '16px' }}>
+                  <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     Current Customer
                   </p>
-                  <h4 className="ca-heading">{config.linkServices.currentCustomerTitle}</h4>
+                  <h3 className="ca-heading ls-card-heading">{config.linkServices.currentCustomerTitle}</h3>
                   <p className="ca-subtitle" style={{ color: '#4b5563', marginBottom: '32px' }}>
                     {config.linkServices.currentCustomerSubtitle}
                   </p>
@@ -99,10 +99,10 @@ export function LinkServices() {
               {/* New Customer */}
               <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: '40px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ flex: 1 }}>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: '16px' }}>
+                  <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     New Customer
                   </p>
-                  <h4 className="ca-heading">{config.linkServices.newCustomerTitle}</h4>
+                  <h3 className="ca-heading ls-card-heading">{config.linkServices.newCustomerTitle}</h3>
                   <p className="ca-subtitle" style={{ color: '#4b5563', marginBottom: '32px' }}>
                     {config.linkServices.newCustomerSubtitle}
                   </p>
