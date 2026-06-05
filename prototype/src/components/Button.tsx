@@ -20,7 +20,7 @@ export function Button({
   style,
 }: ButtonProps) {
   const base = 'rounded-full font-medium transition-all duration-200 flex items-center justify-center'
-  const sizes = fullWidth ? 'w-full text-base' : 'px-8 text-sm'
+  const sizes = fullWidth ? 'w-full text-base' : 'px-4 text-sm'
 
   const variants = {
     primary: `${base} ${sizes} bg-[#DB5C05] text-white hover:bg-[#c45204] active:bg-[#ad4803] disabled:opacity-50`,
