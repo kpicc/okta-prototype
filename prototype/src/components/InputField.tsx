@@ -62,8 +62,8 @@ export function InputField({
             onFocus={() => setFocused(true)}
             onBlur={() => { setFocused(false); onBlur?.() }}
             disabled={disabled}
-            className="flex-1 min-w-0 outline-none text-sm bg-transparent"
-            style={{ color: error ? '#C30000' : undefined, paddingTop: isFloated ? '22px' : '0', paddingBottom: isFloated ? '8px' : '0', height: '52px' }}
+            className="flex-1 min-w-0 outline-none bg-transparent"
+            style={{ color: error ? '#C30000' : undefined, paddingTop: isFloated ? '22px' : '0', paddingBottom: isFloated ? '8px' : '0', height: '52px', fontSize: '16px' }}
           />
           <div className="flex items-center gap-1 ml-2 shrink-0">
             {isPassword && hasValue && (
