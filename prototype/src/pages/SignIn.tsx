@@ -78,7 +78,7 @@ export function SignIn() {
       {adminOpen && <AdminPanel />}
       {/* Global alert banner */}
       {config.bannerVisible && showBanner && (
-        <div style={{ backgroundColor: '#2F7DC1', color: '#fff', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '12px 24px', fontSize: '14px', position: 'relative' }}>
+        <div style={{ backgroundColor: '#2F7DC1', color: '#fff', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '12px 48px 12px 24px', fontSize: '14px', position: 'relative' }}>
           <AlertTriangle size={16} style={{ flexShrink: 0 }} />
           <span>{config.bannerText}</span>
           <button
@@ -133,7 +133,7 @@ export function SignIn() {
               ))}
             </div>
             {/* Marketing text — fixed height container, all slides absolutely stacked */}
-            <div style={{ position: 'relative', height: '200px', flexShrink: 0 }}>
+            <div style={{ position: 'relative', minHeight: '200px', flexShrink: 0 }}>
               {slides.map((slide, i) => (
                 <div
                   key={i}

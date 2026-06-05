@@ -81,7 +81,7 @@ export function LinkServices() {
             {/* Choice cards */}
             <div className="ls-choice-grid">
               {/* Current Customer */}
-              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: '40px', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ flex: 1 }}>
                   <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     Current Customer
@@ -97,7 +97,7 @@ export function LinkServices() {
               </div>
 
               {/* New Customer */}
-              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: '40px', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ flex: 1 }}>
                   <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     New Customer

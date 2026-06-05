@@ -9,7 +9,7 @@ export function Banner() {
   if (!config.bannerVisible || dismissed) return null
 
   return (
-    <div style={{ backgroundColor: '#2F7DC1', color: '#fff', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '12px 24px', fontSize: '14px', position: 'relative' }}>
+    <div style={{ backgroundColor: '#2F7DC1', color: '#fff', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '12px 48px 12px 24px', fontSize: '14px', position: 'relative' }}>
       <AlertTriangle size={16} style={{ flexShrink: 0 }} />
       <span>{config.bannerText}</span>
       <button
