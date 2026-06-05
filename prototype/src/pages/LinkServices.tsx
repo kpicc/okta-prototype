@@ -60,7 +60,7 @@ export function LinkServices() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#f3f4f6', overflowX: 'hidden' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#f3f4f6' }}>
       <Banner />
       {showGrid && <GridOverlay />}
       {/* Logo row */}

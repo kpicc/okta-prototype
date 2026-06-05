@@ -35,7 +35,7 @@ export function Overview() {
   const [activeTab, setActiveTab] = useState('Overview')
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6', overflowX: 'hidden' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
       {/* Top utility bar */}
       <div style={{ backgroundColor: '#111827', padding: '10px 16px', display: 'flex', justifyContent: 'flex-end', gap: '16px', flexWrap: 'wrap' }}>
         <span style={{ color: '#d1d5db', fontSize: '13px', cursor: 'pointer' }}>ON</span>
