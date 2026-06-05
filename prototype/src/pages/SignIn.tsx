@@ -111,9 +111,9 @@ export function SignIn() {
         <div className="w-full md:max-w-[1200px] md:rounded-2xl overflow-hidden flex flex-col md:flex-row md:shadow-sm">
 
           {/* LEFT — dark navy panel */}
-          <div className="left-panel w-full md:w-[53%] flex flex-col" style={{ padding: '16px', gap: '16px', minHeight: 'clamp(480px, 60vw, 620px)' }}>
+          <div className="left-panel w-full md:w-[53%] flex flex-col" style={{ padding: '16px', gap: '16px' }}>
             {/* Photo — inset with rounded corners all around */}
-            <div style={{ borderRadius: '12px', height: 'clamp(160px, 35vw, 320px)', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+            <div style={{ borderRadius: '12px', height: 'clamp(200px, 45vw, 320px)', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
               {slides.map((slide, i) => (
                 <img
                   key={i}
@@ -132,14 +132,14 @@ export function SignIn() {
                 />
               ))}
             </div>
-            {/* Marketing text — fixed height container, all slides absolutely stacked */}
-            <div style={{ position: 'relative', minHeight: '200px', flexShrink: 0 }}>
+            {/* Marketing text — active slide is relative (sizes container), others are absolute */}
+            <div style={{ position: 'relative', flexShrink: 0 }}>
               {slides.map((slide, i) => (
                 <div
                   key={i}
                   style={{
-                    position: 'absolute',
-                    inset: 0,
+                    position: i === activeSlide ? 'relative' : 'absolute',
+                    inset: i === activeSlide ? undefined : 0,
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '12px',
