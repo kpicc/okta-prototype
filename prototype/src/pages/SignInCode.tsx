@@ -13,7 +13,7 @@ export function SignInCode() {
   const location = useLocation()
   const { config, adminOpen, setAdminOpen } = useAdmin()
   const c = config.signInCode
-  const maskedContact = (location.state as { maskedContact?: string })?.maskedContact ?? '••••••••94'
+  const maskedContact = (location.state as { maskedContact?: string })?.maskedContact ?? '(***) ***-**90'
   const [code, setCode] = useState('')
   const [codeError, setCodeError] = useState('')
 

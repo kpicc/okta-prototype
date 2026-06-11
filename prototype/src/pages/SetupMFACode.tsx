@@ -16,7 +16,7 @@ export function SetupMFACode() {
   const [code, setCode] = useState('')
 
 
-  const maskedContact = (location.state as { maskedContact?: string })?.maskedContact ?? '********94'
+  const maskedContact = (location.state as { maskedContact?: string })?.maskedContact ?? '(***) ***-**90'
 
   const steps = [
     { label: 'Create your account', status: 'completed' as const },

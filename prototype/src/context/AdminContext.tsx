@@ -93,7 +93,7 @@ const defaultConfig: AdminConfig = {
     buttonText: 'Continue',
     skipText: 'Skip for now',
     methods: [
-      { value: 'sms', label: 'Text message (SMS)', contactValue: '4167218594' },
+      { value: 'sms', label: 'Text message (SMS)', contactValue: '1234567890' },
       { value: 'email', label: 'Email', contactValue: 'user@example.com' },
     ],
   },
@@ -118,7 +118,7 @@ const defaultConfig: AdminConfig = {
     subtitle: 'How do you want to receive your security code?',
     showPhone: true,
     phoneLabel: 'Phone number',
-    phoneMasked: '••••••••94',
+    phoneMasked: '(***) ***-**90',
     showEmail: true,
     emailLabel: 'Email',
     emailMasked: 'e***l@address.com',

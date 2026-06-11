@@ -25,7 +25,7 @@ export function SetupMFA() {
   function maskContact(value: string | undefined): string {
     if (!value) return ''
     const last2 = value.slice(-2)
-    return '********' + last2
+    return '(***) ***-**' + last2
   }
 
   function maskEmail(value: string | undefined): string {

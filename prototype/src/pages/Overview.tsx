@@ -63,7 +63,7 @@ export function Overview() {
             <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>Account Number: LINKED ACCOUNT</p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', borderBottom: '2px solid #111827', paddingBottom: '4px', justifyContent: 'space-between' }}>
-            <span style={{ fontSize: '15px', color: '#111827' }}>(416) 721-8594</span>
+            <span style={{ fontSize: '15px', color: '#111827' }}>(123) 456-7890</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4-4 4 4M4 10l4 4 4-4" stroke="#DB5C05" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
         </div>
