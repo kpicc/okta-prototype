@@ -6,7 +6,7 @@ import { TextLink } from '../components/TextLink'
 import { CarouselDots } from '../components/CarouselDots'
 import { AdminPanel } from '../components/AdminPanel'
 import { useAdmin } from '../context/AdminContext'
-import { AlertTriangle, Settings } from 'lucide-react'
+import { AlertTriangle, X, Settings } from 'lucide-react'
 import { Banner } from '../components/Banner'
 import { GridOverlay } from '../components/GridOverlay'
 
