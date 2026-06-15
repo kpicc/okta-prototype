@@ -6,7 +6,8 @@ import { TextLink } from '../components/TextLink'
 import { CarouselDots } from '../components/CarouselDots'
 import { AdminPanel } from '../components/AdminPanel'
 import { useAdmin } from '../context/AdminContext'
-import { AlertTriangle, X, Settings } from 'lucide-react'
+import { AlertTriangle, Settings } from 'lucide-react'
+import { Banner } from '../components/Banner'
 import { GridOverlay } from '../components/GridOverlay'
 
 export function SignIn() {
@@ -19,7 +20,6 @@ export function SignIn() {
   const [showAlert, setShowAlert] = useState(false)
   const [activeSlide, setActiveSlide] = useState(0)
   const [paused, setPaused] = useState(false)
-  const [showBanner, setShowBanner] = useState(true)
   const [showSheet, setShowSheet] = useState(false)
   const [closingSheet, setClosingSheet] = useState(false)
   const [showGrid, setShowGrid] = useState(false)
@@ -76,20 +76,7 @@ export function SignIn() {
     <div className="min-h-screen flex flex-col page-bg">
       {showGrid && <GridOverlay />}
       {adminOpen && <AdminPanel />}
-      {/* Global alert banner */}
-      {config.bannerVisible && showBanner && (
-        <div style={{ backgroundColor: '#2F7DC1', color: '#fff', width: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '10px', padding: '12px 48px 12px 16px', fontSize: '14px', position: 'relative', boxSizing: 'border-box' }}>
-          <AlertTriangle size={16} style={{ flexShrink: 0 }} />
-          <span>{config.bannerText}</span>
-          <button
-            onClick={() => setShowBanner(false)}
-            style={{ position: 'absolute', right: '16px', background: 'none', border: 'none', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '4px' }}
-            aria-label="Dismiss"
-          >
-            <X size={16} />
-          </button>
-        </div>
-      )}
+      <Banner />
 
       {/* Logo + Admin toggle */}
       <div className="w-full flex justify-center md:px-8" style={{ paddingTop: '24px', paddingBottom: '24px', paddingLeft: '16px', paddingRight: '16px' }}>
