@@ -23,8 +23,8 @@ export function TextLink({
   const colorClass = color === 'blue' ? 'text-[#2F7DC1]' : 'text-[#DB5C05]'
 
   const content = (
-    <span className={`${colorClass} hover:underline cursor-pointer text-base font-medium${noWrap ? ' whitespace-nowrap' : ''}`} style={fontSize ? { fontSize } : undefined}>
-      {children}
+    <span className={`hover:underline cursor-pointer text-base font-medium${noWrap ? ' whitespace-nowrap' : ''}`} style={fontSize ? { fontSize } : undefined}>
+      <span className={colorClass}>{children}</span>
       {showChevron && <span className="inline-flex items-center whitespace-nowrap" style={{ transform: 'translateY(3px)' }}><ChevronRight size={16} color="#DB5C05" /></span>}
     </span>
   )

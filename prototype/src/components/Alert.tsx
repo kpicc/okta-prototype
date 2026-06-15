@@ -19,8 +19,8 @@ export function Alert({ children, variant = 'error' }: AlertProps) {
   }
 
   return (
-    <div className={`flex gap-3 p-4 rounded-lg border ${styles[variant]} text-sm`}>
-      <span className="shrink-0 mt-0.5">{icons[variant]}</span>
+    <div className={`flex items-center gap-3 p-4 rounded-lg border ${styles[variant]} text-sm`}>
+      <span className="shrink-0">{icons[variant]}</span>
       <div>{children}</div>
     </div>
   )

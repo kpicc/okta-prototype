@@ -133,7 +133,7 @@ export function SignIn() {
               ))}
             </div>
             {/* Marketing text — active slide is relative (sizes container), others are absolute */}
-            <div style={{ position: 'relative', flexShrink: 0 }}>
+            <div style={{ position: 'relative', flexShrink: 0, height: '160px', overflow: 'hidden' }}>
               {slides.map((slide, i) => (
                 <div
                   key={i}
@@ -270,6 +270,11 @@ export function SignIn() {
                     <TextLink onClick={() => navigate('/create-account')} showChevron>{config.newToFreedomLinkText}</TextLink>
                   </div>
                 )}
+                {/* Express Pay */}
+                <div style={{ textAlign: 'center', fontSize: '14px', color: '#555', marginTop: '8px' }}>
+                  Skip the line with{' '}
+                  <TextLink onClick={() => {}} showChevron>Express Pay</TextLink>
+                </div>
                 {/* Footer */}
                 <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '16px', textAlign: 'center' }}>
                   <p style={{ fontSize: '14px', color: '#555', marginBottom: '4px' }}>{config.footerText}</p>

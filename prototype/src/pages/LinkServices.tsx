@@ -81,24 +81,27 @@ export function LinkServices() {
             {/* Choice cards */}
             <div className="ls-choice-grid">
               {/* Current Customer */}
-              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ flex: 1 }}>
+              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ minHeight: '160px' }}>
                   <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     Current Customer
                   </p>
                   <h3 className="ca-heading ls-card-heading">{config.linkServices.currentCustomerTitle}</h3>
-                  <p className="ca-subtitle" style={{ color: '#4b5563', marginBottom: '32px' }}>
+                  <p className="ca-subtitle" style={{ color: '#4b5563', marginBottom: '26px' }}>
                     {config.linkServices.currentCustomerSubtitle}
                   </p>
                 </div>
                 <Button onClick={() => setView('link-form')} fullWidth>
                   {config.linkServices.currentCustomerButton}
                 </Button>
+                <div style={{ textAlign: 'center', marginTop: '18px' }}>
+                  <TextLink showChevron color="blue" onClick={() => {}}>Activate SIM</TextLink>
+                </div>
               </div>
 
               {/* New Customer */}
-              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ flex: 1 }}>
+              <div style={{ backgroundColor: '#fff', borderRadius: '16px', boxShadow: '0 1px 6px rgba(0,0,0,0.1)', padding: 'clamp(24px, 5vw, 40px)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ minHeight: '160px' }}>
                   <p className="ls-eyebrow" style={{ fontFamily: 'Ambra Sans Text Medium, sans-serif', fontWeight: 500, letterSpacing: '2px', textTransform: 'uppercase', color: '#DB5C05', marginBottom: '16px' }}>
                     New Customer
                   </p>
@@ -141,6 +144,9 @@ export function LinkServices() {
               <Button onClick={handleLinkContinue} fullWidth>
                 {config.linkServices.buttonText}
               </Button>
+              <div style={{ textAlign: 'center', marginTop: '8px' }}>
+                <TextLink showChevron={false} color="blue" onClick={() => {}}>Activate SIM</TextLink>
+              </div>
 
             </div>
           </div>
