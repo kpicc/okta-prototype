@@ -27,9 +27,9 @@ export function Success() {
       </div>
 
       <ProgressBar steps={[
-        { label: 'Create your account', status: 'completed' as const },
-        { label: 'Link your services', status: 'completed' as const },
-        { label: 'Set up multi-factor authentication', status: 'completed' as const },
+        { label: 'Create account', status: 'completed' as const },
+        { label: 'Link services', status: 'completed' as const },
+        { label: 'Set up MFA', status: 'completed' as const },
       ]} />
 
       <main className="ca-main">

@@ -23,9 +23,9 @@ export function VerifyEmail() {
   const [resent, setResent] = useState(false)
 
   const steps = [
-    { label: 'Create your account', status: 'active' as const },
-    { label: 'Link your services', status: 'inactive' as const },
-    { label: 'Set up multi-factor authentication', status: 'inactive' as const },
+    { label: 'Create account', status: 'active' as const },
+    { label: 'Link services', status: 'inactive' as const },
+    { label: 'Set up MFA', status: 'inactive' as const },
   ]
 
   const handleContinue = () => {

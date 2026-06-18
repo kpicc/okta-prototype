@@ -34,9 +34,9 @@ export function LinkServices() {
   const [pinError, setPinError] = useState('')
 
   const steps = [
-    { label: 'Create your account', status: 'completed' as const },
-    { label: 'Link your services', status: 'active' as const },
-    { label: 'Set up multi-factor authentication', status: 'inactive' as const },
+    { label: 'Create account', status: 'completed' as const },
+    { label: 'Link services', status: 'active' as const },
+    { label: 'Set up MFA', status: 'inactive' as const },
   ]
 
   const handleLinkContinue = () => {
