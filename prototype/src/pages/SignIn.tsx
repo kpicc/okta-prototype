@@ -86,7 +86,7 @@ export function SignIn() {
           <button
             onClick={() => setAdminOpen(!adminOpen)}
             title="Open Admin Panel"
-            style={{ background: adminOpen ? '#E87722' : '#0d1f3c', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', transition: 'background 0.2s', flexShrink: 0 }}
+            style={{ background: adminOpen ? '#E87722' : '#0d1f3c', border: 'none', borderRadius: '50%', width: '40px', height: '40px', cursor: 'pointer', display: 'none', alignItems: 'center', justifyContent: 'center', color: '#fff', transition: 'background 0.2s', flexShrink: 0 }}
           >
             <Settings size={18} />
           </button>
@@ -175,7 +175,7 @@ export function SignIn() {
                 aria-label={paused ? 'Play' : 'Pause'}
               >
                 {paused ? (
-                  <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg>
+                  <svg width="10" height="12" viewBox="-1 0 10 12" fill="currentColor"><path d="M0 0l10 6-10 6z"/></svg>
                 ) : (
                   <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><rect x="0" y="0" width="3" height="12"/><rect x="6" y="0" width="3" height="12"/></svg>
                 )}

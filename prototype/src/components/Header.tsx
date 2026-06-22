@@ -33,7 +33,7 @@ export function Header({ showBack = false, onSettingsClick }: HeaderProps) {
           </button>
         )}
         {onSettingsClick && (
-          <button onClick={onSettingsClick} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: '#6b7280', display: 'flex', alignItems: 'center' }}>
+          <button onClick={onSettingsClick} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '6px', color: '#6b7280', display: 'none', alignItems: 'center' }}>
             <Settings size={20} />
           </button>
         )}
